@@ -22,7 +22,9 @@ class Animal
         std::string type;
     public:
         Animal();
-        ~Animal();
+        Animal(const Animal& other);
+        Animal& operator=(const Animal& other);
+        virtual ~Animal();
         std::string getType() const { return type; }
         virtual void makeSound() const;
 };
@@ -33,9 +35,11 @@ class WrongAnimal
         std::string type;
     public:
         WrongAnimal();
+        WrongAnimal(const WrongAnimal& other);
+        WrongAnimal& operator=(const WrongAnimal& other);
         ~WrongAnimal();
         std::string getType() const { return type; }
-        virtual void makeSound() const { std::cout << "Wrong Animal Sound" << std::endl << std::endl; }
+        void makeSound() const { std::cout << "Wrong Animal Sound" << std::endl << std::endl; }
 };
 
 

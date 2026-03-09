@@ -18,6 +18,23 @@ Cat::Cat() : Animal()
     std::cout << "a wild Cat just spawned!" << std::endl;
 }
 
+Cat::Cat(const Cat& other) : Animal(other)
+{
+    type = other.type;
+    std::cout << "Cat copy constructed" << std::endl;
+}
+
+Cat& Cat::operator=(const Cat& other)
+{
+    if (this != &other)
+    {
+        Animal::operator=(other);
+        type = other.type;
+    }
+    std::cout << "Cat assigned" << std::endl;
+    return *this;
+}
+
 Cat::~Cat()
 {
     std::cout << "Where did the cat go?" << std::endl;
@@ -33,6 +50,23 @@ WrongCat::WrongCat() : WrongAnimal()
 {
     type = "WrongCat";
     std::cout << "This cat is kynda strange..." << std::endl;
+}
+
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other)
+{
+    type = other.type;
+    std::cout << "WrongCat copy constructed" << std::endl;
+}
+
+WrongCat& WrongCat::operator=(const WrongCat& other)
+{
+    if (this != &other)
+    {
+        WrongAnimal::operator=(other);
+        type = other.type;
+    }
+    std::cout << "WrongCat assigned" << std::endl;
+    return *this;
 }
 
 WrongCat::~WrongCat()

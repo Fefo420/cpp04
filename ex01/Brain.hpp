@@ -13,9 +13,8 @@
 #ifndef BRAIN_HPP
 # define BRAIN_HPP
 
-# include "Cat.hpp"
-# include "Dog.hpp"
-# include "Animal.hpp"
+# include <iostream>
+# include <string>
 
 
 class Brain

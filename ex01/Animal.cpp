@@ -17,6 +17,21 @@ Animal::Animal() : type("Animal")
     std::cout << "Average Animal created" << std::endl;
 }
 
+Animal::Animal(const Animal& other) : type(other.type)
+{
+    std::cout << "Animal copy constructed" << std::endl;
+}
+
+Animal& Animal::operator=(const Animal& other)
+{
+    if (this != &other)
+    {
+        type = other.type;
+    }
+    std::cout << "Animal assigned" << std::endl;
+    return *this;
+}
+
 Animal::~Animal() 
 {
     std::cout << "Animal destroyed" << std::endl;
@@ -31,6 +46,21 @@ void Animal::makeSound() const
 WrongAnimal::WrongAnimal() : type("Wrong Animal")
 {
     std::cout << "WrongAnimal created" << std::endl;
+}
+
+WrongAnimal::WrongAnimal(const WrongAnimal& other) : type(other.type)
+{
+    std::cout << "WrongAnimal copy constructed" << std::endl;
+}
+
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other)
+{
+    if (this != &other)
+    {
+        type = other.type;
+    }
+    std::cout << "WrongAnimal assigned" << std::endl;
+    return *this;
 }
 
 WrongAnimal::~WrongAnimal() 

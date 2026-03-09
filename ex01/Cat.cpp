@@ -18,6 +18,13 @@ Cat::Cat() : Animal(), brain(new Brain())
     std::cout << "a wild Cat just spawned!" << std::endl;
 }
 
+Cat::Cat(const Cat& other) : Animal(other)
+{
+    brain = new Brain(*other.brain);
+    type = other.type;
+    std::cout << "Cat copy constructed!" << std::endl;
+}
+
 Cat& Cat::operator=(const Cat& other)
 {
     if (this != &other)
