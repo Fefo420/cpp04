@@ -43,11 +43,26 @@ Dog::~Dog()
 {
     if (brain)
         delete brain;
-    brain = nullptr;
+    brain = 0;
     std::cout << "Dog: Who let the dog out?" << std::endl;
 }
 
 void Dog::makeSound() const 
 {
     std::cout << "BARK BARK GET OUT OF MY HOUSE BARK BARK" << std::endl << std::endl;
+}
+
+std::string Dog::getIdea(int i) const
+{
+    return brain->getIdea(i);
+}
+
+Brain* Dog::getBrain()
+{
+    return brain;
+}
+
+const Brain* Dog::getBrain() const
+{
+    return brain;
 }

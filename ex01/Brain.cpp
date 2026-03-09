@@ -15,7 +15,7 @@
 Brain::Brain()
 {
     for (int i = 0; i < 100; i++)
-        ideas[i] = "should i eat " + std::to_string(i) + " Cats today?";
+        ideas[i] = "Default idea";
     std::cout << "Brain created with default ideas." << std::endl;
 }
 
@@ -40,4 +40,14 @@ Brain& Brain::operator=(const Brain& other)
 Brain::~Brain()
 {
     std::cout << "I forgot what I was thinking..." << std::endl;
+}
+
+std::string Brain::getIdea(int i) const
+{
+    return ideas[i];
+}
+
+void Brain::setIdea(int i, const std::string& idea)
+{
+    ideas[i] = idea;
 }

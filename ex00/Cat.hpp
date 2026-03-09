@@ -23,7 +23,7 @@ class Cat : public Animal
         Cat(const Cat& other);
         Cat& operator=(const Cat& other);
         ~Cat();
-        virtual void makeSound() const override;
+        virtual void makeSound() const;
 
 };
 
@@ -34,7 +34,7 @@ class WrongCat : public WrongAnimal
         WrongCat(const WrongCat& other);
         WrongCat& operator=(const WrongCat& other);
         ~WrongCat();
-        void makeSound() const { std::cout << "Can i get a dollar?" << std::endl << std::endl; }
+    void makeSound() const;
 };
 
 #endif

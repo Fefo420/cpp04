@@ -27,18 +27,20 @@ class Cat : public Animal
         Cat(const Cat& other);
         Cat& operator=(const Cat& other);
         ~Cat();
-        virtual void makeSound() const override;
+        virtual void makeSound() const;
         std::string getIdea(int i) const;
-        Brain* getBrain() { return brain; }
-        const Brain* getBrain() const { return brain; }
+        Brain* getBrain();
+        const Brain* getBrain() const;
 };
 
 class WrongCat : public WrongAnimal
 {
     public:
         WrongCat();
+        WrongCat(const WrongCat& other);
+        WrongCat& operator=(const WrongCat& other);
         ~WrongCat();
-        void makeSound() const { std::cout << "Can i get a dollar?" << std::endl << std::endl; }
+        void makeSound() const;
 };
 
 #endif

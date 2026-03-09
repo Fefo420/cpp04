@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Abstract Class
+NAME = Abstract
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++17 -g

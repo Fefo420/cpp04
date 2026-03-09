@@ -25,7 +25,7 @@ class Animal
         Animal(const Animal& other);
         Animal& operator=(const Animal& other);
         virtual ~Animal();
-        std::string getType() const { return type; }
+        std::string getType() const;
         virtual void makeSound() const;
 };
 
@@ -38,8 +38,8 @@ class WrongAnimal
         WrongAnimal(const WrongAnimal& other);
         WrongAnimal& operator=(const WrongAnimal& other);
         ~WrongAnimal();
-        std::string getType() const { return type; }
-        void makeSound() const { std::cout << "Wrong Animal Sound" << std::endl << std::endl; }
+        std::string getType() const;
+        void makeSound() const;
 };
 
 

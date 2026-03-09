@@ -28,10 +28,10 @@ class Dog : public Animal
         Dog(const Dog& other);
         Dog& operator=(const Dog& other);
         ~Dog();
-        virtual void makeSound() const override;
+        virtual void makeSound() const;
         std::string getIdea(int i) const;
-        Brain* getBrain() { return brain; }
-        const Brain* getBrain() const { return brain; }
+        Brain* getBrain();
+        const Brain* getBrain() const;
 };
 
 #endif

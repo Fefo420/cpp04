@@ -43,7 +43,7 @@ Cat::~Cat()
 {
     if (brain)
         delete brain;
-    brain = nullptr;
+    brain = 0;
     std::cout << "Cat: Where did the cat go?" << std::endl;
 }
 
@@ -59,7 +59,44 @@ WrongCat::WrongCat() : WrongAnimal()
     std::cout << "This cat is kynda strange..." << std::endl;
 }
 
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other)
+{
+    type = other.type;
+    std::cout << "WrongCat copy constructed" << std::endl;
+}
+
+WrongCat& WrongCat::operator=(const WrongCat& other)
+{
+    if (this != &other)
+    {
+        WrongAnimal::operator=(other);
+        type = other.type;
+    }
+    std::cout << "WrongCat assigned" << std::endl;
+    return *this;
+}
+
 WrongCat::~WrongCat()
 {
     std::cout << "looks like the STRANGE CAT vanished" << std::endl;
+}
+
+std::string Cat::getIdea(int i) const
+{
+    return brain->getIdea(i);
+}
+
+Brain* Cat::getBrain()
+{
+    return brain;
+}
+
+const Brain* Cat::getBrain() const
+{
+    return brain;
+}
+
+void WrongCat::makeSound() const
+{
+    std::cout << "Can i get a dollar?" << std::endl << std::endl;
 }

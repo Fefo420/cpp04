@@ -73,3 +73,8 @@ WrongCat::~WrongCat()
 {
     std::cout << "looks like the STRANGE CAT vanished" << std::endl;
 }
+
+void WrongCat::makeSound() const
+{
+    std::cout << "Can i get a dollar?" << std::endl << std::endl;
+}
